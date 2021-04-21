@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--第一层-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:textColor="#642100"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:text="画板使用" />
+
+            <TextView
+                android:id="@+id/setsize"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:textColor="#642100"
+                android:text="设置字号/颜色" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#dedede" />
+
+        </RelativeLayout>
+
+
+        <com.example.draw_compare.MSurfaceView
+            android:id="@+id/surfaceview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:background="#dedede" />
+
+            <TextView
+                android:id="@+id/reset"
+                android:layout_width="147dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="重绘"
+                android:textColor="#642100" />
+
+            <TextView
+                android:id="@+id/reset2"
+                android:layout_width="147dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/reset"
+                android:text="check"
+                android:textColor="#642100"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--第二层-->
+    <LinearLayout
+        android:id="@+id/winpop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:layout_marginTop="60dp"
+            android:background="#cdcdcd">
+
+            <RadioButton
+                android:id="@+id/sizeten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10号|黑色" />
+
+            <RadioButton
+                android:id="@+id/sizetwelve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12号|蓝色" />
+
+            <RadioButton
+                android:id="@+id/sizefifteen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15号|红色" />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</FrameLayout>
